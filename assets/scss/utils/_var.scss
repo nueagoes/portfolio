@@ -1,0 +1,73 @@
+/*================
+                COLOR
+=================*/
+$color-primary: #F9F9F9;
+$color-primary-transparent: rgba(249, 249, 249, 0.6);
+$color-secondary: #5F84F5;
+$color-point: #FFF9A7;
+$color-dark: #232323;
+$color-black: #000000;
+$color-lightgray: #BEBEBE;
+$color-white: #FFFFFF;
+$color-gradient-overlay: linear-gradient(to bottom,rgba(95, 132, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+$color-gardient-red: radial-gradient(circle,rgba(255, 172, 172, 1) 0%, rgba(255, 255, 255, 0) 50%);
+$color-gardient-pink: radial-gradient(circle,rgba(255, 172, 208, 1) 0%, rgba(255, 255, 255, 0) 50%);
+$color-gardient-yellow: radial-gradient(circle,rgba(255, 251, 172, 1) 0%, rgba(255, 255, 255, 0) 50%);
+$color-gardient-green: radial-gradient(circle,rgba(172, 255, 230, 1) 0%, rgba(255, 255, 255, 0) 50%);
+$color-gardient-blue: radial-gradient(circle,rgba(172, 227, 255, 1) 0%, rgba(255, 255, 255, 0) 50%);
+
+
+
+
+/*================
+                TYPO
+=================*/
+$font-base: 16px;
+$font-family-base: 'ClashDisplay-Variable';
+$font-family-btnko: 'PFStardust';
+$font-family-btnen: 'NBP Informa FiveThree';
+$font-family-point: 'againstregular';
+$font-family-point2: 'zasliaregular';
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+
+
+/*================
+                spacing
+=================*/
+$spacing-side: 40px;
+$spacing-mobile-side: 16px;
+$spacing-gutter: 20px;
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 80px;
+$spacing-xl: 100px;
+
+
+
+/*================
+            Breakpoint
+=================*/
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 1023px;
+$breakpoint-desktop: 1279px;
+
+
+
+
+/*================
+                Image
+=================*/
+$img-path: '../images/';
+$logo-img: '#{$img-path}logo.svg';
+
+
+
+
+/*================
+                Size
+=================*/
+$header-height: 100px;
+$header-mobile-height: 70px;

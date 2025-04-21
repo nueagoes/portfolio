@@ -1,0 +1,291 @@
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: $header-height;
+    padding: 0 $spacing-side;
+    z-index: 100;
+    transition: 0.5s;
+    
+    @include respond(sm) {
+        height: $header-mobile-height;
+        padding: 0 $spacing-mobile-side;
+
+        &.hide {
+            @include hidden;
+        }
+        
+
+    }
+    .logo {
+        width: 58px;
+        height: 58px;
+
+        @include respond(sm) {
+            width: 36px;
+            height: 36px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    .util-area {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+
+        @include respond(md) {
+            display: none;
+        }
+
+        .mail {
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                display: block;
+                width: 14px;
+                height: 1px;
+                top: 10px;
+                background: $color-black;
+            }
+            &::before {
+                left: 0;
+                transform-origin: bottom right;
+                transform: rotate(30deg);
+            }
+            &::after {
+                right: 0;
+                transform-origin: bottom left;
+                transform: rotate(-30deg);
+            }
+
+            a {
+                display: block;
+                width: 28px;
+                height: 20px;
+                border: 1px solid $color-black;
+                border-radius: 2px;
+            }
+            .circle-icn {
+                position: absolute;
+                top: -3px;
+                right: -3px;
+                display: block;
+                width: 6px;
+                height: 6px;
+                background: $color-secondary;
+                border-radius: 50%;
+            }
+        }
+
+        .time {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            width: 80px;
+            height: 20px;
+            text-align: center;
+            border: 1px solid $color-black;
+            border-radius: 2px;
+            span {
+                font-family: $font-family-btnen;
+                font-size: 18px;
+            } 
+            em {
+                animation: colon 1s steps(2) infinite;
+                margin-top: -3px;
+            } 
+        }
+    }
+
+    .menu-btn {
+        display: none;
+        z-index: 99;
+
+        @include respond(md) {
+            display: block;
+        }
+
+        &.on {
+            .hamburger {
+                i {
+                    z-index: 100;
+                    &:nth-child(1) {
+                        transform: rotate(45deg);
+                        transform-origin: top left;
+                        width: 27px;
+                    }
+                    &:nth-child(2) {
+                        @include hidden;
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-45deg);
+                        transform-origin: bottom left;
+                        width: 27px;
+                    }
+                }
+            }
+        }
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 27px;
+            height: 20px;
+
+
+            i {
+                width: 100%;
+                height: 2px;
+                background: $color-black;
+                border-radius: 1px;
+                transition: 0.3s;
+            }
+        }
+    }
+
+
+    .mobile-menu-pop {
+        transition: transform 0.3s;
+        &.on {
+            transform: translateX(0);
+        }
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: $color-white;
+        transform: translateX(100%);
+
+        .mobile-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: $header-height $spacing-side 50px;
+
+            @include respond(sm) {
+                padding: $header-mobile-height $spacing-mobile-side;
+            }
+
+            .menu-list {}
+            .menu-item {
+                a {
+                    font-size: 58px;
+                    line-height: 1.5;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: $color-dark;
+                        opacity: 0.5;
+                    }
+
+                    @include respond(sm) {
+                        font-size: 38px;
+                    }
+                }
+            }
+            .vt-line {
+                position: relative;
+                width: 1px;
+                flex: 1;
+                background: $color-dark;
+                margin-left: 4px;
+
+                &::after {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: $color-dark;
+    
+                }
+            }
+            .contact {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-gutter;
+
+                .email-box {
+                    .link-email {
+                        display: flex;
+                        gap: $spacing-sm;
+                        padding: 10px 0;
+                    }
+                    span {
+                        font-size: 20px;
+                    }
+                    .email-icn {
+                        display: block;
+                        position: relative;
+                        width: 28px;
+                        height: 20px;
+                        border: 1px solid $color-black;
+                        border-radius: 2px;
+            
+                        &::before,
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            display: block;
+                            width: 14px;
+                            height: 1px;
+                            top: 10px;
+                            background: $color-black;
+                        }
+                        &::before {
+                            left: 0;
+                            transform-origin: bottom right;
+                            transform: rotate(30deg);
+                        }
+                        &::after {
+                            right: 0;
+                            transform-origin: bottom left;
+                            transform: rotate(-30deg);
+                        }
+                    }
+                }
+                .sns-box {
+                    display: flex;
+                    gap: $spacing-gutter;
+
+                    a {
+                        img {
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes colon {
+    0% {
+        @include hidden;
+    }
+    100% {
+        @include show;
+    }
+}
+

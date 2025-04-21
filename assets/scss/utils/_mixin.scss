@@ -1,0 +1,37 @@
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin imgCover {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: auto;
+}
+
+@mixin hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+/** 미디어 쿼리 **/
+@mixin respond($breakpoint) {
+    @if $breakpoint == lg {
+      @media (max-width: $breakpoint-desktop) { @content; }
+    } @else if $breakpoint == md {
+      @media (max-width: $breakpoint-tablet) { @content; }
+    } @else if $breakpoint == sm {
+      @media (max-width: $breakpoint-mobile) { @content; }
+    }
+  }
