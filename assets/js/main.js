@@ -269,9 +269,9 @@ mm.add("all", () => {
         });
 
         // 모달 표시
-        $('.design-modal, .modal-overlay').fadeIn(200);
         let designSrc = $(this).find('img').attr('data-num');
         $('.design-modal .modal-img').attr('src','./assets/images/' + designSrc + '.png');
+        $('.design-modal, .modal-overlay').fadeIn(200);
         $('.design-modal').scrollTop(0);
     });
 
