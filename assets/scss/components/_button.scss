@@ -21,6 +21,11 @@
     border-radius: 3px;
     border-width: 1px;
     border-style: solid;
+    transition: 0.2s;
+
+    &:hover {
+        opacity: 0.5;
+    }
 
     @include respond(sm) {
         width: 100%;

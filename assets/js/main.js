@@ -258,6 +258,12 @@ mm.add("all", () => {
     $('.sc-design .work-item .thumb').on('click', function(e){
         e.preventDefault();
 
+        // 모달 표시
+        let designSrc = $(this).find('img').attr('data-num');
+        $('.design-modal .modal-img').attr('src','./assets/images/' + designSrc + '.png');
+        $('.design-modal, .modal-overlay').fadeIn(200);
+        $('.design-modal').scrollTop(0);
+
         // 현재 스크롤 위치 저장
         scrollPos = $(window).scrollTop();
 
@@ -267,12 +273,6 @@ mm.add("all", () => {
             top: `-${scrollPos}px`,
             width: '100%'
         });
-
-        // 모달 표시
-        let designSrc = $(this).find('img').attr('data-num');
-        $('.design-modal .modal-img').attr('src','./assets/images/' + designSrc + '.png');
-        $('.design-modal, .modal-overlay').fadeIn(200);
-        $('.design-modal').scrollTop(0);
     });
 
     // 모달 닫기
@@ -295,7 +295,7 @@ mm.add("all", () => {
 
     // 모달 내부에서만 스크롤 허용
     $('.design-modal').on('wheel touchmove', function(e){
-    e.stopPropagation();
+        e.stopPropagation();
     });
 
 

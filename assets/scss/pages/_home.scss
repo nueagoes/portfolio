@@ -404,7 +404,7 @@ body {
             display: flex;
             flex-shrink: 0;
             width: max-content;
-            animation: marquee 20s linear infinite;
+            animation: marquee 30s linear infinite;
 
             span {
                 display: flex;
@@ -565,6 +565,7 @@ body {
                 .thumb-preview {
                     position: relative;
                     overflow: hidden;
+                    transition: 0.7s;
                 }
                 .thumb-hover {
                     position: absolute;
@@ -572,6 +573,7 @@ body {
                     top: 0; left: 0;
                     width: 100%;
                     height: 100%;
+                    transition: 0.7s;
                     @include hidden;
 
                     img,video {
@@ -846,7 +848,7 @@ body {
         white-space: nowrap;
         flex-shrink: 0;
         width: max-content;
-        animation: marquee 20s linear infinite;
+        animation: marquee 30s linear infinite;
         
         @include respond(md) {
             gap: 30px;
