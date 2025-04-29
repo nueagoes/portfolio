@@ -293,12 +293,15 @@ mm.add("all", () => {
         width: ''
         });
         window.scrollTo(0, scrollPos);
+
+        $('.design-modal').scrollTop(0);
     });
     }
 
     $('.modal-overlay, .design-modal .close').on('click', closeModal);
+
     $(document).on('keyup', function(e){
-    if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape') closeModal();
     });
 
     // 모달 내부에서만 스크롤 허용
