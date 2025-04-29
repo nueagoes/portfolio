@@ -260,9 +260,17 @@ mm.add("all", () => {
 
         // 모달 표시
         let designSrc = $(this).find('img').attr('data-num');
-        $('.design-modal .modal-img').attr('src','./assets/images/' + designSrc + '.png');
-        $('.design-modal, .modal-overlay').fadeIn(200);
-        $('.design-modal').scrollTop(0);
+        let newImgSrc = './assets/images/' + designSrc + '.png';
+
+        // 임시 이미지 객체 생성해서 미리 로딩
+        let tempImg = new Image();
+        tempImg.onload = function() {
+            // 이미지 로딩 완료 후에 src 설정 + 모달 표시
+            $('.design-modal .modal-img').attr('src', newImgSrc);
+            $('.design-modal').scrollTop(0);
+            $('.design-modal, .modal-overlay').fadeIn(200);
+        };
+        tempImg.src = newImgSrc;
 
         // 현재 스크롤 위치 저장
         scrollPos = $(window).scrollTop();
